@@ -4,6 +4,7 @@ using namespace std;
 int power(int base, int po);
 int factorial(int base);
 double square(double side);
+float trianglearea(float side1, float side2, float angle);
 int resp = 1;
 int resf = 1;
 float const pi = 3.14159265;
@@ -11,7 +12,7 @@ int main() {
 	int base;
 	float l;
 	float w;
-	int deg;
+	float deg;
 	int c1;
 	int c2;
 	int shape;
@@ -219,10 +220,8 @@ int main() {
 					cin >> l;
 					cout << "enter angel in degrees" << endl;
 					cin >> deg;
-					float q = ((l * w) / 2) * sin(deg); 
-					if (q < 0)
-						q = q * -1; 
-					cout << "Area = " << q << endl;
+					
+					cout << "Area = " << trianglearea(w,l,deg) << endl;
 					break;
 				}
 			}
@@ -261,6 +260,13 @@ int factorial(int base) {
 
 }
 double square(double side) {
-	int a = side * side;
-	return a;
+	int result = side * side;
+	return result;
+}
+float trianglearea(float side1,float side2,float angle)
+{
+	float result = ((side1 * side2) / 2) * sin(angle);
+					if (result < 0)
+					result = result * -1;
+					return result;
 }
